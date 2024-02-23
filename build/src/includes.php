@@ -15,6 +15,6 @@ function run_npm_build($type=null,$id=null,$break_cache=null){
         return ['output'=>$output,'retval'=>$retval];
     }
     else{
-        shell_exec('cd '.$root.'/build/ && node_modules/.bin/rimraf -g ../public_html/*.html && node_modules/.bin/eleventy 2>&1 >> '.$root.'/build/tmp/log');
+        shell_exec('source /home/takeachisel/nodevenv/public_html/build/16/bin/activate && cd /home/takeachisel/public_html/build && node_modules/.bin/rimraf -g ../public_html/*.html && node_modules/.bin/eleventy 2>&1 >> '.$root.'/build/tmp/log');
     }
 }
