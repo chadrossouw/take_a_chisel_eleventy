@@ -23,7 +23,11 @@
 	"keywords": [],
 	"author": "Chad Rossouw",
 	"license": "ISC",
-	"devDependencies": {
+	"dependencies": {
+		"dotenv": "^16.3.1",
+		"highlight.js": "^11.9.0",
+		"lunr": "^2.3.9",
+		"node-fetch": "^2.6.1",
 		"@11ty/eleventy": "^2.0.1",
 		"@babel/core": "^7.23.6",
 		"@babel/preset-env": "^7.23.6",
@@ -35,11 +39,5 @@
 		"sass": "^1.69.5",
 		"webpack": "^5.89.0",
 		"webpack-cli": "^5.1.4"
-	},
-	"dependencies": {
-		"dotenv": "^16.3.1",
-		"highlight.js": "^11.9.0",
-		"lunr": "^2.3.9",
-		"node-fetch": "^2.6.1"
 	}
 }
