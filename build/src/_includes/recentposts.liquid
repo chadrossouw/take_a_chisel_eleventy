@@ -1,0 +1,11 @@
+<section class="block" id="posts">
+  <ul class="margins flex flex_33">
+    {% for post in post.posts limit: 3 %}
+      {% if counter == 0 %}
+        {% break %}
+      {% endif %}
+      {% include 'card_post' data: post %}
+    {% endfor %}
+  </ul>
+  <a href="{{environment.url}}posts" class="button decorative margins">View all posts</a>
+</section>

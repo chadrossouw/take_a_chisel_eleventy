@@ -1,0 +1,5 @@
+{% if data %}
+  <img src="{{data}}" alt="">
+{% else %}
+  <img src="{{environment.url}}assets/images/{{global.image.thumb}}" class="default">
+{% endif %}

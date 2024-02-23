@@ -1,0 +1,13 @@
+.hero{
+	margin-top:2rem;
+	margin-bottom:4rem;
+	@include media700 {
+		margin-bottom:6rem;
+	}
+	p {
+		max-width: 680px;
+		margin: 0 auto;
+	}
+	
+	
+}

@@ -1,0 +1,62 @@
+
+/*General rules for cards*/
+.cards {
+  margin: 4rem 0;
+  .flex_item {
+    margin-bottom: 2rem;
+  }
+  a {
+    text-decoration: none;
+    color: $color_black;
+  }
+  .container {
+    margin-bottom: 2rem;
+  }
+  .decorative {
+    padding-left: 0;
+  }
+}
+
+.card {
+  border:2px solid $color-primary;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #060a0f;
+  display: block;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  padding:0.75rem;
+  img {
+    transition: filter var(--transition) ease;
+    opacity: 1;
+    border-radius: 0.25rem;
+  }
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: $color_black;
+    img {
+      filter: saturate(0.5);
+    }
+  }
+  .card_text {
+    padding: 1rem 0.25rem;
+  }
+}
+
+ul.flex_33 {
+  padding: 0;
+  list-style: none;
+}
+
+ul.flex_33 li {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.pagination li {
+  margin-bottom: 0.5rem;
+}

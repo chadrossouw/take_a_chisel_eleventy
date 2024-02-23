@@ -1,0 +1,85 @@
+@include media1200 {
+  .column--one {
+    grid-column: 1/2;
+    &.content {
+      grid-row: 1/3;
+    }
+    .wysiwyg_container {
+      padding-bottom: 0; //check
+    }
+  }
+
+  .column--two {
+    grid-column: 2/3;
+    &.side_bar,
+    &.quicklinks_container,
+    &.in_this_section {
+      margin-left: 4rem;
+    }
+  }
+
+  .grid--two-column {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-auto-flow: dense;
+    column-gap: 2rem;
+    //row-gap:3rem;
+    & > * {
+      min-width: 0px;
+    }
+    .padding {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &.has_crumb {
+      grid-template-rows: 4rem auto;
+    }
+    &.grid--two-column-equal {
+      grid-template-columns: 1fr 1fr;
+    }
+    &.grid--45_55 {
+      grid-template-columns: 9fr 11fr;
+      column-gap: 4rem;
+      .column--two {
+        padding-right: 4rem;
+      }
+    }
+  }
+}
+
+//Fix for when client sets bg-white on for a column--one wysiwyg
+.column--one .wysiwyg_container.bg-white {
+  margin-top: 2rem;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  @include media1200 {
+    margin-top: -2rem;
+  }
+}
+
+.page-template-user-account {
+  .column--one .bg-white {
+    margin-top: unset;
+  }
+}
+
+.grid--two_five {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  @include media1000 {
+    grid-template-columns: 3fr 10fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.single-show {
+  .content {
+    h1 {
+      font-size: $font_22px;
+      line-height: $font_36px;
+      @include media1200 {
+        font-size: $font_42px;
+      }
+    }
+  }
+}

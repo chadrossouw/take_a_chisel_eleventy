@@ -1,0 +1,200 @@
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  color: $color_body;
+  font-family: $font__main;
+  font-size: 1rem;
+  line-height: $font__line-height-body;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  
+  //clear: both;
+
+  font-weight: 400;
+  line-height: 110%;
+  margin: 0 0 1rem;
+  //text-transform: uppercase;
+  //letter-spacing: 0.015em;
+  + h1,
+  + h2,
+  + h3,
+  + h4 {
+    margin-top: -1rem;
+  }
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-family:$font__heading;
+  color: $color-primary;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-family:$font__heading;
+  color: $color-primary;
+}
+
+h3 {
+  font-size: 1.25rem;
+  &.lc {
+    text-transform: uppercase;
+  }
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: $font_16px;
+  line-height: $font_26px;
+  font-weight: $font_medium;
+}
+
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  padding: 0 1.5em;
+  font-style: italic;
+  border-left: 2px solid $color-primary;
+  margin: 1rem auto;
+
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+pre {
+  background: $color__background-pre;
+  font-family: $font__pre;
+  line-height: $font__line-height-pre;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: $font__code;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted $color__border-abbr;
+  cursor: help;
+}
+
+mark,
+ins {
+  background: $color__background-ins;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}
+
+/*Typography Utilities*/
+
+.weight-bold {
+  font-weight: 700;
+}
+
+.lc {
+  text-transform: initial;
+}
+.uc {
+  text-transform: uppercase;
+}
+
+.large {
+  font-size: 1.2rem;
+  line-height: 125%;
+}
+@include media1000 {
+  .large {
+    //font-size:1.8rem;
+    line-height: 125%;
+  }
+}
+
+.small {
+  font-size: 80%;
+}
+
+::-moz-selection {
+  color: var(--color-white-to-black);
+  background: var(--color-secondary);
+}
+::selection {
+  color: var(--color-white-to-black);
+  background: var(--color-secondary);
+} 
+
+.bold {
+  font-weight:700;
+}
+
+.center {
+  text-align: center;
+}
+
+a.arrow_link {
+  position: relative;
+  padding-right: 2rem;
+  width: fit-content;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  &::after {
+    content: "";
+    height: .8rem;
+    width: 1.2rem;
+    display: block;
+    top: calc(50% - 0.4rem);
+    right: 0;
+    background-image: url(../assets/arrow.svg);
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+    transition: transform var(--transition) ease;
+  }
+  &:hover::after {
+    transform: translateX(.2rem);
+    @media (prefers-reduced-motion: reduce) {
+      transform: none;
+   }
+  }
+}
+
+a:focus {
+  outline: 2px solid;
+  outline-offset: 0.2rem;
+}

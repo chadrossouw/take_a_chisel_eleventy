@@ -1,0 +1,46 @@
+---
+pagination:
+    data: post.posts
+    size: 10
+    alias: posts
+permalink: "posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus:1}}/{% endif %}index.html"
+---
+{% include 'head' %}
+{% include 'nav' %}
+<main id="primary" class="margins">
+  <h1>Posts</h1>
+  {% if pagination.pageNumber > 0 %}
+    <h3>Page {{ pagination.pageNumber | plus: 1 }}</h3>
+  {% endif %}
+  <ul class="flex flex_33">
+    {%- for post in posts %}
+      {% include 'card_post' data: post %}
+    {% endfor -%}
+  </ul>
+  <nav aria-labelledby="pagination-title">
+    <h2 id="pagination-title" class='screen-reader-text'>Navigate through pages</h2>
+    <ul class="flex pagination">
+      {% if pagination.pageNumber > 0 %}
+        <li class="flex_item">
+          <a href="{{ pagination.href.first }}" class="decorative">
+            First Page</a>
+        </li>
+      {% endif %}
+      {% if pagination.pageNumber > 1 %}
+        <li class="flex_item">
+          <a href="{{ pagination.href.previous }}" class="decorative">
+            <span aria-hidden="true">&laquo;</span>
+            Previous</a>
+        </li>
+      {% endif %}
+      {% if pagination.href.next %}
+        <li class="flex_item">
+          <a href="{{ pagination.href.next }}" class="decorative">Next
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+</main>
+{% include 'foot' %}

@@ -1,0 +1,59 @@
+// stylelint-disable value-keyword-case
+$font__main: aller, sans-serif;
+$font__heading: legitima, sans-serif;
+$body: $font__main;
+$header: $font__heading;
+// stylelint-enable value-keyword-case
+$font__code: ubuntu-mono, sans-serif;
+$font__pre: mono, sans-serif;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+//Px Font Sizes//
+$font_10px: 0.625rem;
+$font_12px: 0.75rem;
+$font_13px: 0.8125rem;
+$font_14px: 0.875rem;
+$font_16px: 1rem;
+$font_18px: 1.125rem;
+$font_19px: 1.1875rem;
+$font_20px: 1.25rem;
+$font_21px: 1.3125rem;
+$font_22px: 1.375rem;
+$font_23px: 1.4375rem;
+$font_24px: 1.5rem;
+$font_25px: 1.5625rem;
+$font_26px: 1.625rem;
+$font_28px: 1.75rem;
+$font_29px: 1.8125rem;
+$font_30px: 1.875rem;
+$font_32px: 2rem;
+$font_33px: 2.0625rem;
+$font_34px: 2.125rem;
+$font_35px: 2.1875rem;
+$font_36px: 2.25rem;
+$font_38px: 2.375rem;
+$font_40px: 2.5rem;
+$font_42px: 2.625rem;
+$font_44px: 2.75rem;
+$font_45px: 2.8125rem;
+$font_46px: 2.875rem;
+$font_48px: 3rem;
+$font_54px: 3.375rem;
+$font_64px: 4rem;
+$font_70px: 4.375rem;
+$font_84px: 5.25rem;
+
+/*Font Weights*/
+
+$font_regular: 400;
+$font_medium: 500;
+$font_semibold: 600;
+$font_bold: 700;
+$font_extrabold: 800;
+$font_black: 900;
+
+
+.has-medium-font-size{
+    font-size: 1.25rem;
+}

@@ -1,0 +1,27 @@
+---
+    meta:
+      title: "All categories"
+      excerpt: "Browse through Take a Chisel categories."
+      slug: "categories"
+    permalink: "/categories.html"
+---
+{% include 'head' data: meta %}
+{% include 'nav' %}
+<main id="primary">
+    <h1>{{ meta.title }}</h1>
+    {% for category in post.categories %}
+        {% if category.items %}
+            <section class="block categories"></div>
+                <h2><a href="{{category.title | downcase}}/index.html">{{category.title}}</a></h2>
+                <ul class="flex flex-33 ">
+                    {%- for post in category.items limit:3 %}
+                        {% include 'card_post' data: post %}
+                    {% endfor -%}
+                </ul>
+                <a href="{{category.title | downcase}}/index.html" class="button">View all {{category.title}}</a>
+                <hr>
+            </section>
+        {% endif %}
+    {% endfor %}
+</main>
+{% include 'foot' %}

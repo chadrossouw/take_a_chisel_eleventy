@@ -1,0 +1,41 @@
+---
+pagination: 
+  data: post.categories
+  size: 1
+  alias: category
+permalink: "{{category.title | downcase}}/{% if category.page_number > 1 %}{{ category.page_number }}/{% endif %}/index.html"
+---
+{% include 'head' data: category %}
+{% include 'nav' %}
+<main id="primary" class="margins">
+  <h1>{{ category.title }}</h1>
+  <ul class="flex flex_33 ">
+    {%- for post in category.items %}
+      {% include 'card_post' data: post %}
+    {% endfor -%}
+  </ul>
+  {% if category.total_pages > 1 %}
+    <nav aria-labelledby="pagination-title">
+      <h2 id="pagination-title" class='screen-reader-text'>Navigate through pages</h2>
+      <p>Page {{ category.page_number }} of {{ category.total_pages }}</p>
+      <ul class="flex flex_33 pagination">
+        {% if category.page_number > 1 %}
+          <li>
+            <a href="/{{category.title | downcase}}/1/index.html" class="decorative">First Page</a>
+          </li>
+        {% endif %}
+        {% if category.page_number >= 2 %}
+          <li>
+            <a href="/{{category.title | downcase}}/{{category.page_number | minus:1}}/index.html" class="decorative">Previous</a>
+          </li>
+        {% endif %}
+        {% if category.next_page_number %}
+          <li>
+            <a href="/{{category.title | downcase}}/{{category.next_page_number}}" class="decorative">Next</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+</main>
+{% include 'foot' %}

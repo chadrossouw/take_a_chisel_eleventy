@@ -1,0 +1,42 @@
+{% assign description = 'Take a Chisel is the website of Chad Rossouw' %}
+{% if data.excerpt %}
+    {% assign description = data.excerpt %}
+{% endif %}
+{% assign title = 'Take a Chisel' %}
+{% if data.title %}
+    {% assign title = data.title | append: ' | Take a Chisel' %}
+{% endif %}
+{% assign url = environment.url %}
+{% if data.slug %}
+    {% assign url = environment.url | append: data.slug %}
+{% endif %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+        <meta name="description" content="{{description}}"/>
+        <meta name="author" content="Chad Rossouw" />
+        <meta property="og:title" content="{{ title }}" />
+        <meta property='og:image' content='{{environment.url}}assets/images/logo.jpg'/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{url}}" />
+        <meta property="og:description" content="{{description}}"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="https://use.typekit.net/mlw3unz.css">
+        <link rel="stylesheet" type="text/css" href="{{environment.url}}css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{environment.url}}css/swiper.min.css">
+        <link rel="stylesheet" type="text/css" href="{{environment.url}}css/navigation.min.css">
+        <link rel="alternate" type="application/rss+xml" title="Take A Chisel" href="{{environment.url}}feed.xml" />
+    </head>
+    <body>

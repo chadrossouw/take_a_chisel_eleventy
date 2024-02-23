@@ -1,0 +1,191 @@
+@use "sass:math";
+
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100vh;
+}
+
+/*responsive padding and margins*/
+.margins {
+  margin: 1rem var(--margin);
+  @include media1200 {
+    margin: 2rem var(--margin) 3rem;
+  }
+}
+
+.padding {
+  padding: 1rem var(--margin) 2rem;
+  @include media1200 {
+    padding: 2rem var(--margin) 3rem;
+  }
+}
+
+.double_padding {
+  padding-left: var(--margin);
+  padding-right: var(--margin);
+  @include media1000 {
+    padding-left: calc(var(--margin) * 2);
+    padding-right: calc(var(--margin) * 2);
+  }
+}
+
+.padding.padding--half{
+  padding: 4rem var(--margin);
+  @include media1200 {
+    padding: 4rem calc(var(--margin) / 2);
+  }
+}
+
+.margin-left {
+  margin-left: var(--margin);
+}
+.margin-right {
+  margin-right: var(--margin);
+}
+.padding-left {
+  padding-left: var(--margin);
+}
+.padding-right {
+  padding-right: var(--margin);
+}
+
+/*Grid and Flex*/
+.grid {
+  display: grid;
+}
+
+.grid--two-column.margins {
+  .padding {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .margins {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &.flex_50 {
+    & > .flex_item, & > .flex--item {
+      flex-basis: 100%;
+    }
+  }
+  &.flex_66-33,
+  &.flex_33 {
+    & > .flex_item {
+      flex-basis: 100%;
+    }
+  }
+  &.flex_25 {
+    & > .flex_item {
+      flex-basis: 100%;
+    }
+  }
+  &.flex_20 {
+    justify-content: start;
+    gap: 2%;
+    & > .flex_item {
+      flex-basis: 48%;
+    }
+  }
+  &.flex_25-75 {
+    & > .flex_item {
+      flex-basis: 100%;
+    }
+  }
+}
+
+@include media700 {
+  .flex {
+    &.flex_50 {
+      & > .flex_item, & > .flex--item {
+        flex-basis: calc(50% - 2rem);
+      }
+    }
+   
+    &.flex_25 {
+      & > .flex_item {
+        flex-basis: 48%;
+      }
+    }
+    &.flex_20 {
+      & > .flex_item {
+        flex-basis: 18%;
+      }
+    }
+  }
+}
+
+@include media1000 {
+  .flex.flex_66-33 {
+    & > .flex_item {
+      flex-basis: 67%;
+      &:nth-child(2n) {
+        flex-basis: 33%;
+      }
+    }
+  }
+  .flex.flex_25 {
+    gap: 2.5%;
+    &::after {
+      content: "";
+      flex-grow: 1;
+    }
+    & > .flex_item {
+      flex-basis: 23%;
+    }
+  }
+  .flex.flex_25-75 {
+    .flex_item:nth-child(1) {
+      flex-basis: 25%;
+      margin-right: 2rem;
+    }
+    .flex_item:nth-child(2) {
+      flex-basis: calc(75% - 2rem);
+    }
+  }
+  .flex.flex_33 {
+    flex-wrap: wrap;
+    & > .flex_item {
+      flex-basis: calc(33% - 1.66rem);
+
+    }
+    &::after {
+      content: '';
+      flex-basis: calc(33% - 1.66rem);
+    }
+  }
+}
+
+@include media1200 {
+  .flex.flex_66-33 {
+    & > .flex_item {
+      flex-basis: 55%;
+      &:nth-child(2n) {
+        flex-basis: 33%;
+      }
+    }
+  }
+  
+}
+
+.flex.cats {
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inner-padding {
+    padding: 2rem;
+  }
+
+  .fixed {
+    position: fixed;
+    top: 0;
+  }
+ 

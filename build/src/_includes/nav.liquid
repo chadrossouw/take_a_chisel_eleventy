@@ -1,0 +1,96 @@
+<header id="masthead">
+  <div id="menu_logo">
+    <a href="/">
+      {{ '/src/assets/images/logo.svg' | svgContents }}
+      <span class="screen-reader-text">Go to Take A Chisel Home</span>
+    </a>
+    <button
+      class="hamburger hamburger--collapse"
+      type="button"
+      id="hamburger"
+      aria-controls="primary-menu"
+      aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-left"></span>
+        <span class="hamburger-center"></span>
+        <span class="hamburger-right"></span>
+      </span>
+      <p class="screen-reader-text">Open Menu</p>
+    </button>
+  </div>
+
+  <nav id="site-navigation" class="main-navigation">
+    <div class="nav_logo">
+      <a href="/">
+        {{ '/src/assets/images/logo.svg' | svgContents }}
+        <span class="screen-reader-text">Go to Take A Chisel Home</span>
+      </a>
+    </div>
+    <ul id="primary-menu">
+      <li class="menu_nav_item_div">
+        <a class="menu_nav_item_first" href="/">Home</a>
+      </li>
+      <li class="menu_nav_item_div">
+        <a class="menu_nav_item" href="/posts">Blog</a>
+      </li>
+
+      {% for item in nav.main %}
+        {% assign url = environment.url | append: item.slug %}
+        {% if item.type != 'page' %}
+          {% assign url = environment.url | append: 'post/' | append: item.slug %}
+        {% endif %}
+        <li class="menu_nav_item_div">
+          <a class="menu_nav_item" href="{{url}}.html">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+      <li class="menu_nav_item_div">
+        <button
+          class="search toggle_modal"
+          data-modal_id="search_panel"
+          aria-controls="search_panel"
+          aria-expanded="false">
+          <span aria-hidden="true">{{ '/src/assets/images/searchicon.svg' | svgContents }}</span>
+          <span class="screen-reader-text">Open Search</span>
+        </button>
+      </li>
+      <hr>
+    </ul>
+
+  </nav>
+  <div class="modal" id="search_panel">
+    <button
+      class="close"
+      aria-controls="search_panel"
+      aria-expanded="false">
+      <span aria-hidden="true">{{ '/src/assets/images/close.svg' | svgContents }}</span>
+      <span class="screen-reader-text">Close Search</span>
+    </button>
+    <div class="modal_inner">
+
+      <h2>Search Take A Chisel</h2>
+      <form
+        role="search"
+        method="get"
+        class="search-form"
+        action="{{ environment.url | append: 'search.html' }}">
+        <label>
+          <span class="screen-reader-text">Search for:</span>
+          <input
+            type="search"
+            class="search-field"
+            id="search_input"
+            placeholder="Search…"
+            value=""
+            name="q"
+            title="Search for:" />
+        </label>
+        <input
+          type="submit"
+          class="search-submit screen-reader-text"
+          value="Search" />
+      </form>
+      <h2 id="search_term"></h2>
+      <ul id="search_results" class="flex flex_33"></ul>
+    </div>
+  </div>
+</header>

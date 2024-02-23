@@ -1,0 +1,104 @@
+.switch{
+    border:none;
+    border-radius:1rem;
+    height:2rem;
+    width:6.4rem;
+    background-color:$color-secondary-light;
+    position: relative;
+    padding:0;
+    transition:background-color var(--transition) ease;
+    .vivid_text{
+        padding-left:calc(2rem + 3px);
+        padding-right:6px;
+        text-align: right;
+    }
+    .muted_text{
+        padding-right:calc(2rem + 3px);
+        padding-left:6px;
+    }
+    span{
+        font-size:.9rem;
+        display:inline-block;
+        width:5.5rem;
+    }
+    span:nth-of-type(2) {
+        display: none;
+    }
+    &[aria-pressed]{
+        background-color: $color_secondary;
+        .toggle{
+            transform: translateX(4.4rem);
+            background-color: $color-secondary;
+            svg{
+                g{
+                    fill: $color-secondary;
+                    stroke: $color-white;
+                    stroke-width: 1px;
+                }
+            }
+        }
+        span:nth-of-type(1) {
+            display: none;
+        }
+        span:nth-of-type(2) {
+            display: inline;
+        }
+    }
+    &:hover .toggle {
+        background-color: var(--color-secondary-lighter-to-primary-lighter);
+        svg{
+            g{
+                fill: $color_black;
+                stroke:$color_black;
+            }
+        }
+    }
+    &:focus{
+        outline:2px solid;
+        outline-offset: 2px;
+    }
+}
+
+.toggle {
+    position: absolute;
+    height: calc(2rem - 6px);
+    width: calc(2rem - 6px);
+    top: 3px;
+    left: 3px;
+    border-radius: 1rem;
+    border:1px solid $color-white;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(0);
+    transition: transform var(--move-transition) ease, background-color var(--transition) ease;
+    svg {
+        g {
+            fill: $color_secondary_darker;
+            stroke: $color_secondary_darker;
+            stroke-width: 0;
+            transition:all var(--transition) ease;
+        }
+    }
+}
+
+.text_sizer_button {
+    padding: 0;
+    background: transparent;
+    transition:all var(--transition) ease;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    path{
+        transition:fill var(--transition) ease;
+    }
+    &:not([disabled]):hover{
+        background-color: $color-secondary-lighter;
+        path{fill:$color_black;}
+    }
+    &:focus {
+        outline: 2px solid;
+        outline-offset: 2px;
+    }
+}

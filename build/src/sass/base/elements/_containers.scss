@@ -1,0 +1,56 @@
+@use "sass:math";
+/*Proportional Images*/
+.container {
+    &.container--square {
+      @include proportional-container(100%, math.div(1, 1));
+    }
+    &.container--round {
+      @include proportional-container(100%, math.div(1, 1));
+      border-radius: 50%;
+    }
+    &.container--sixteennine {
+      @include proportional-container(56.25%, math.div(16, 9));
+    }
+    &.container--fourthree {
+      @include proportional-container(75%, math.div(4, 3));
+    }
+    &.container--twentyonenine {
+      @include proportional-container(42.85%, math.div(21, 9));
+    }
+    &.container--fivefour {
+      @include proportional-container(80%, math.div(5, 4));
+    }
+    &.container--fourfive {
+      @include proportional-container(125%, math.div(4, 5));
+    }
+    &.container--twothree {
+      @include proportional-container(150%, math.div(2, 3));
+    }
+    &.container--threetwo {
+      @include proportional-container(66%, math.div(3, 2));
+    }
+    &.container--video {
+      overflow: visible;
+    }
+    img {
+      @include proportional-image;
+    }
+    &.container--max-height {
+      height: 375px;
+      width: fit-content;
+      position: static;
+      img {
+        height: 100%;
+        width: auto;
+        position: static;
+        max-width: calc(100vw - 2 * var(--margin));
+        object-fit: contain;
+      }
+    }
+}
+.cover{
+    img{
+        width:100%;
+        height:auto;
+    }
+}

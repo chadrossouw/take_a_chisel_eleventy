@@ -1,0 +1,28 @@
+---
+permalink: /lunr.json
+---
+
+[
+{% for post in post.posts %}
+{
+   "index":"post_{{forloop.index}}",
+   "title":"{{post.title}}",
+   "url":"{{environment.url}}post/{{post.slug}}.html",
+   "content":{%- stringify post.content  -%},
+   "excerpt":{% excerpt post.content %},
+   "image":"{{post.image}}"
+},
+{% endfor %} 
+
+{% for post in paged %}
+{
+   "index":"page_{{forloop.index}}",
+   "title":"{{post.title}}",
+   "url":"{{environment.url}}{{post.slug}}.html",
+   "content":{%- stringify post.content -%},
+   "excerpt":{% excerpt post.content %},
+   "image":"{{post.image}}"
+} {% if forloop.last == false %},{% endif %}
+{% endfor %} 
+
+]

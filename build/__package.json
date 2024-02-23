@@ -1,0 +1,42 @@
+{
+	"name": "takeachisel",
+	"version": "1.0.0",
+	"description": "Blog",
+	"main": "index.js",
+	"scripts": {
+		"build:webpack": "webpack --mode production",
+		"build:eleventy": "eleventy",
+		"build_all": "npm-run-all copy_assets build:* rename clean",
+		"build_live": "npm-run-all copy_assets webpacker eleventy rename clean",
+		"clean": "rimraf ../web_tmp/",
+		"concat": "node concat",
+		"convert": "node convert.mjs",
+		"eleventy": "npx @11ty/eleventy",
+		"copy_assets": "node copy_assets",
+		"serve:webpack": "webpack --mode development --watch",
+		"serve:eleventy": "eleventy --serve",
+		"serve": "npm-run-all clean --parallel serve:*",
+		"serve:sass": "sass src/sass/style.scss src/css/style.css --source-map --style=compressed -w",
+		"rename": "node rename",
+		"webpacker": "node webpacker"
+	},
+	"keywords": [],
+	"author": "Chad Rossouw",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@babel/core": "^7.16.0",
+		"@babel/preset-env": "^7.16.0",
+		"@types/node": "^16.10.2",
+		"babel-loader": "^8.2.3",
+		"eleventy-plugin-svg-contents": "^0.7.0",
+		"sass": "^1.55.0",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^3.0.2",
+		"webpack": "^5.52.1",
+		"webpack-cli": "^4.8.0"
+	},
+	"dependencies": {
+		"dotenv": "^16.0.3"
+	}
+}

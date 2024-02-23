@@ -1,0 +1,29 @@
+
+.social_media_wrapper {
+	.so-me {
+		justify-content: center;
+		display:grid;
+		gap: 1rem;
+		grid-template-columns: auto auto;
+		svg {
+			height: 2rem;
+			width: 2rem;
+			path {
+				fill: $color_white;
+			}
+		}
+	}
+}
+.no-flexbox-gap{
+	.social_media_wrapper {
+		.so-me {
+			gap:0;
+			> *{
+				margin-right:1rem;
+				&:last-child{
+					margin-right:0;
+				}
+			}
+		}	
+	}
+}

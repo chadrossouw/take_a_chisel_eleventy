@@ -1,0 +1,11 @@
+<li class="flex_item">
+  <a href="{{environment.url}}post/{{data.slug}}.html" class="card">
+    <div class="container container--sixteennine">
+      {% include 'image' data: data.image %}
+    </div>
+    <div class="card_text">
+      <h3>{{ data.title }}</h3>
+      <p class="small">{{ data.date | postDate }}</p>
+    </div>
+  </a>
+</li>

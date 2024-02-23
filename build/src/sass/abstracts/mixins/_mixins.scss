@@ -1,0 +1,76 @@
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+  width: map-get($columns, $numberColumns) -
+    (($columns__margin * ($numberColumns - 1)) / $numberColumns);
+}
+
+@mixin media700 {
+  @media screen and (min-width: 700px) {
+    @content;
+  }
+}
+@mixin media1000 {
+  @media screen and (min-width: 1000px) {
+    @content;
+  }
+}
+@mixin media1200 {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media1600 {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin media1800 {
+  @media screen and (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin proportional-container($percent, $ratio) {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  @supports (aspect-ratio: 16/9) {
+    aspect-ratio: $ratio;
+  }
+
+  @supports not (aspect-ratio: 16/9) {
+    padding-top: $percent;
+    height: 0;
+  }
+}
+
+@mixin proportional-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+@function vh($quantity) {
+  @return calc(var(--vh) * #{$quantity});
+}
+
+@mixin bg($color) {
+  background-color: $color;
+}
+
+@mixin clr($color) {
+  color: $color;
+}

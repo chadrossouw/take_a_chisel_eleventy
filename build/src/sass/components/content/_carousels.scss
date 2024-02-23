@@ -1,0 +1,318 @@
+/* Review Carousel*/
+.carousel--reviews {
+	padding-bottom: 4rem;
+	position: relative;
+	margin-right: 0;
+	overflow: hidden;
+	@include media1000 {
+		padding-bottom: 1rem;
+		overflow: visible;
+		margin-left: 0;
+	}
+	.swiper-slide {
+		width: auto;
+		height: auto;
+		@include media1200 {
+			flex-basis: 20%;
+		}
+	}
+	.button--prev,
+	.button--next {
+		top: unset;
+		bottom: 0;
+		svg {
+			width: 32px;
+			height: 32px;
+			path {
+				transition: fill var(--transition) ease-in;
+			}
+		}
+		&:hover,
+		:active {
+			svg {
+				path {
+					fill: $color_primary;
+				}
+			}
+		}
+	}
+	.button--prev {
+		right: calc(var(--margin) + 3rem);
+		@include media1000 {
+			left: calc(var(--margin) - 4rem);
+			z-index: 9;
+			top: 50%;
+			bottom: unset;
+			right: unset;
+		}
+	}
+
+	.button--next {
+		@include media1000 {
+			right: calc(var(--margin) - 4rem);
+			z-index: 9;
+			top: 50%;
+			bottom: unset;
+		}
+	}
+	&::before {
+		@include media1000 {
+			content: "";
+			background: $color-bg;
+			width: var(--margin);
+			height: calc(100% + 1rem); //hide drop shadow
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			margin-top: -1rem;
+			margin-bottom: -1rem;
+		}
+	}
+	&::after {
+		content: "";
+		background: $color_bg;
+		width: var(--margin);
+		height: calc(100% + 1rem); //hide drop shadow
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		margin-top: -1rem;
+		margin-bottom: -1rem;
+	}
+}
+
+/*Gallery Carousel*/
+
+.block--carousel {
+	position: relative;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	@include media1200 {
+		margin-top: 0;
+	}
+	h3 {
+		color: $color_black;
+		font-size: $font_22px;
+		line-height: $font_28px;
+		max-width: calc(100% - var(--margin) - 85px);
+		@include media1200 {
+			font-size: $font_28px;
+			line-height: $font_48px;
+		}
+	}
+	.button--prev,
+	.button--next {
+		top: 0;
+		z-index: 9;
+		@include media1200 {
+			top: 231.5px;
+		}
+		&::before {
+			@include media1200 {
+				content: "";
+				background: none;
+				width: 44px;
+				height: 44px;
+				position: absolute;
+				display: block;
+				bottom: 0;
+				right: 0;
+				z-index: -1;
+				border-radius: 50%;
+				box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
+			}
+		}
+		svg {
+			height: 33px;
+			width: 33px;
+			@include media1200 {
+				height: 44px;
+				width: 44px;
+			}
+			path {
+				transition: fill var(--transition) ease-in;
+				fill: #9f9f9f;
+				@include media1200 {
+					fill: $color_white;
+				}
+			}
+			#Path_2130 {
+				fill: transparent;
+				@include media1200 {
+					fill: $color_black;
+				}
+			}
+			&:hover {
+				path {
+					fill: $color_primary;
+				}
+			}
+		}
+	}
+	.button--prev {
+		right: calc(var(--margin) + 1rem + 33px);
+		@include media1200 {
+			right: unset;
+			left: 2rem;
+		}
+	}
+	.button--next {
+		right: var(--margin);
+		@include media1200 {
+			right: calc(var(--margin) + 2rem);
+		}
+	}
+}
+
+.carousel--gallery {
+	.swiper-slide {
+		width: min-content;
+	}
+	&::before {
+		content: "";
+		background: $color_bg;
+		display: block;
+		height: 104%;
+		width: var(--margin);
+		position: absolute;
+		z-index: 9;
+		left: calc(var(--margin) * -1);
+		top: -2px;
+	}
+	&::after {
+		content: "";
+		background: $color_bg;
+		display: block;
+		height: 104%;
+		width: var(--margin);
+		position: absolute;
+		z-index: 9;
+		right: 0;
+		top: -2px;
+	}
+}
+
+.carousel--zoomer {
+	.swiper-slide {
+		max-width: calc(100vw - 2 * var(--margin));
+		width: calc(100vw - 2 * var(--margin));
+		margin-left: var(--margin);
+		margin-right: var(--margin);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.button--prev {
+		top: 50vh;
+		left: calc(var(--margin) - 16.5px);
+		@include media1200 {
+			top: 50vh;
+		}
+	}
+	.button--next {
+		top: 50vh;
+		right: calc(var(--margin) - 16.5px);
+		@include media1200 {
+			top: 50vh;
+			left: unset;
+			right: var(--margin);
+		}
+	}
+	.slide_index {
+		top: calc(var(--vh) * 5);
+		left: var(--margin);
+		@include media1200 {
+			top: calc(var(--vh) * 4);
+			right: unset;
+			left: var(--margin);
+		}
+	}
+	.close_zoomer {
+		padding-right: 0;
+	}
+}
+
+/* Associate Carousels*/
+
+.associate_carousel_block {
+	position: relative;
+}
+
+.carousel--associates {
+	//overflow: hidden;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		background: $color_white;
+		display: block;
+		height: 100%;
+		top: 0;
+		right: 100%;
+		width: calc(var(--margin) * 2);
+		z-index: 9;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		background: $color_white;
+		display: block;
+		height: 100%;
+		top: 0;
+		left: 100%;
+		width: calc(var(--margin) * 2);
+		z-index: 9;
+	}
+	.swiper-wrapper {
+		align-items: center;
+	}
+}
+
+.carousel--associates .button--prev,
+.button--next {
+	top: 0;
+	z-index: 99;
+}
+
+.carousel--associates .button--prev {
+	left: -1rem;
+	top: 50%;
+	width: fit-content;
+	@include media700 {
+		left: -2rem;
+	}
+	@include media1000 {
+		left: -3rem;
+	}
+	@include media1200 {
+		left: -3rem;
+	}
+	@include media1600 {
+		left: -6rem;
+	}
+}
+.carousel--associates .button--next {
+	right: -1rem;
+	top: 50%;
+	width: fit-content;
+	@include media700 {
+		right: -2rem;
+	}
+	@include media1000 {
+		right: -3rem;
+	}
+	@include media1200 {
+		right: -3rem;
+	}
+	@include media1600 {
+		right: -6rem;
+	}
+}
+
+.associate_carousel_title {
+	margin-bottom: 0;
+}

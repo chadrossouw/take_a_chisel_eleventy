@@ -1,0 +1,14 @@
+---
+pagination:
+    data: post.posts
+    size: 1
+    alias: post_each
+permalink: "/post/{{ post_each.slug }}.html"
+---
+
+{% include 'head' data: post_each %}
+{% include 'nav' %}
+<main id="primary">
+  {% include 'post_content' data: post_each %}
+</main>
+{% include 'foot' %}

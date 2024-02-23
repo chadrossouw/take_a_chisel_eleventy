@@ -1,0 +1,21 @@
+<div id="content" class="margins">
+  {% if data.image %}
+    <div class="container container--sixteennine">
+      {% include 'image' data: data.image %}
+    </div>
+  {% endif %}
+  <h1>{{ data.title }}</h1>
+  {% if data.category %}
+    <div class="flex cats">
+      {% for category in data.category %}
+        {% if category == 'Uncategorized' %}
+          {% continue %}
+        {% endif %}
+        <a href="/{{category | downcase }}/">{{ category }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <p class="small">{{ data.date | postDate }}</p>
+
+  {{ data.content }}
+</div>

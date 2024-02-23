@@ -1,0 +1,73 @@
+/*Colors & bgs*/
+#page {
+	background: $color_bg;
+}
+
+.black {
+	color: $color_black;
+}
+
+.body {
+	color: $color_body;
+}
+
+.white {
+	color: $color_bg;
+}
+
+.primary {
+	color: $color-primary;
+}
+
+.secondary {
+	color: $color-secondary;
+}
+
+.bg-,
+.bg_ {
+	&black {
+		background-color: $color_black;
+	}
+	&bg {
+		background-color: $color_bg;
+	}
+	&white{
+		background-color: $color_bg;
+	}
+	&grey {
+		background-color: $color_grey;
+	}
+
+	&primary {
+		background-color: $color-primary;
+	}
+	&secondary {
+		background-color: $color_secondary;
+	}
+	&secondary_sub {
+		background-color: var(--color-secondary-lighter);
+	}
+}
+
+.error{
+	color:#a01313
+}
+
+.color_primary{
+	fill: $color_primary;
+}
+
+.color_body{
+	fill: $color_body;
+}
+
+@media (forced-colors: active) {
+
+}
+
+@media (forced-colors:active) and (prefers-color-scheme:light){
+
+}
+@media (forced-colors:active) and (prefers-color-scheme:dark){
+
+}

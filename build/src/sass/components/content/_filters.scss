@@ -1,0 +1,7 @@
+.current_filters p:has(~div:empty) {
+    display: none;
+}
+
+.current_filters div:empty~#clear{
+    display:none;
+}

@@ -1,0 +1,279 @@
+.meta_blocks {
+    max-width: 100%;
+}
+.flex>.meta_blocks{
+    flex-basis:100%;
+}
+.meta_blocks {
+    background-color: $color_grey;
+}
+
+.meta_blocks_inner, .meta_blocks_inner h4{
+    width:610px;
+    max-width:90vw;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin:0 auto;
+}
+
+
+.one-column{ 
+    .block-editor-inner-blocks {
+        flex-basis: 100%;
+    }
+}
+
+.meta_blocks h4{
+    flex-basis:100%;
+}
+
+.button_control.open {
+    max-height: 700px;
+}
+
+
+p.hide-if-no-js.image_area  a{
+    width: 100%;
+    height: 100px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.hide-if-no-js.image_area  a#remove_listing_image_button{
+    width: 100%;
+    height: auto;
+    background: transparent;
+    display: inline-block;
+}
+
+.button_control{
+	max-height:0;
+	overflow:hidden;
+	transition: overflow 400ms ease;
+}
+
+.button_control.open{
+    max-height:1000px;
+}
+
+.meta_blocks.open .meta_blocks_inner {
+    max-height: 2000px !important;
+}
+
+.meta_blocks_inner img {
+    object-fit: cover;
+}
+
+#editor{
+    font-family: 'Montserrat', sans-serif;
+    p,h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+        font-family: 'Montserrat', sans-serif;
+        text-transform: none;
+    }
+}
+
+html :where(.editor-styles-wrapper){
+    color: $color_body;
+    font-family: $font__main;
+    font-size: 1rem;
+    line-height: $font__line-height-body;
+    font-weight: 500;
+}
+ @include media700{
+    .flex>.block-editor-inner-blocks>.block-editor-block-list__layout{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .wp-block-ace-content-support-organisation>.block-editor-inner-blocks{
+        width:100%;
+    }
+    .wp-block-ace-content-blog>.block-editor-inner-blocks {
+        width: 100%;
+    }
+    .wp-block-ace-content-blocks{
+        flex-basis:66%;
+        width:66%;
+        .inner-blocks{
+            max-width:780px;
+        }
+    }
+    
+    .sidebar{
+        flex-basis:33%;
+        width:33%;
+        padding-left:4rem;
+    }
+    .flex.wp-block-ace-content>.block-editor-inner-blocks{
+        flex-basis:66%;
+        width:66%;
+        .inner-blocks{
+            max-width:780px;
+        }
+    }
+}
+.wp-block-ace-content-blog.two-column {
+    display: block;
+}
+@include media1200{
+    
+    .flex>.block-editor-inner-blocks>.block-editor-block-list__layout{
+        display: grid;
+        grid-template-columns: 2fr 18rem 1fr;
+    }
+    .wp-block-ace-content-blog.two-column {
+        display: block !important;
+    }
+}
+
+.wp-block-post-title {
+    margin: 0 var(--margin);
+    display: block;
+}
+
+.post-type-page .wp-block-post-title{
+    text-align: center;
+    padding:4rem var(--margin);
+    margin:0  !important;
+    background-image:var(--primary-gradient);
+}
+
+.edit-post-visual-editor__post-title-wrapper .editor-post-title{
+    margin: 0 var(--margin);
+}
+
+
+.sidebar .meta_blocks_inner {
+    width: 100%;
+}
+
+.sidebar .meta_blocks h4 {
+    width: 100%;
+}
+
+.block-editor-block-list__block.wp-block.banner.full_width{
+    height:100vh;
+}
+
+.meta_blocks .meta_blocks_inner{
+    p, a {
+        font-size: 1rem;
+    }
+    h4{
+        font-size:1.1rem;
+    }
+}
+body.js.block-editor-page,.is-desktop-preview,.editor-styles-wrapper {
+    background-color:$color_bg !important;
+}
+
+.block-editor-block-list__block a{
+    color:$color-secondary;
+}
+
+.component-color-indicator {
+    width: 45px;
+    height: 45px;
+}
+.components-form-toggle{
+    margin-top:1rem;
+}
+
+html :where(.editor-styles-wrapper) h2{
+    color:$color-secondary;
+}
+
+.wp-block-ace-organisation-sidebar .components-button svg {
+    margin-right:0;
+}
+
+.block-editor-block-list__block.wp-block.blog_related_list.wp-block-ace-latest-blog-posts {
+    margin-left: 0;
+    margin-right: 0;
+    grid-column: 3/4;
+    background-color: #F7F7F7;
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.wp-ace-latest-blog-posts .sidebar_list {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.content-content .sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 1/4;
+    width:100%;
+}
+
+.block-editor-block-list__block.wp-block.banner.full_width .meta_blocks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.interface-interface-skeleton__editor {
+    button, input, select, optgroup, textarea{
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+    }
+    font-size: .8rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.components-panel__header.edit-post-sidebar__panel-tabs ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.block-editor-block-list__block.wp-block-ace-content.two-column .meta_blocks_inner {
+    max-width: 100%;
+}
+
+.block-editor-block-list__block.wp-block-ace-content.two-column {
+    column-gap: 2rem;
+}
+
+.media-router .media-menu-item{
+    background-color: $color_primary;
+    &.active{
+        background-color: #fff;
+    }
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block.is-highlighted:after, .block-editor-block-list__layout .block-editor-block-list__block.is-highlighted~.is-multi-selected:after, .block-editor-block-list__layout .block-editor-block-list__block:not([contenteditable]):focus:after, .block-editor-block-list__layout.is-navigate-mode .block-editor-block-list__block.is-selected:after {
+    border-radius: 1px;
+    bottom: 1px;
+    box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+    content: "";
+    left: 1px;
+    outline: 2px solid transparent;
+    pointer-events: none;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    z-index: 1;
+    width:unset;
+    height:unset;
+    transform: translateX(0);
+}
+
+/*adds margins for elements added outside of containers*/
+.is-root-container>*:not(div) {
+    margin-left:var(--margin);
+    margin-right:var(--margin);
+}
