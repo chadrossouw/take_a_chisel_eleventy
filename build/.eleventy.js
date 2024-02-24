@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(svgContents);
 	eleventyConfig.addPassthroughCopy('src/css');
 	eleventyConfig.addPassthroughCopy('src/assets');
+	eleventyConfig.addPassthroughCopy('src/js/main.js');
 	eleventyConfig.addPassthroughCopy('src/*.php');
 	eleventyConfig.addPassthroughCopy('src/.htaccess');
 	eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));

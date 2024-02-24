@@ -21,7 +21,7 @@ module.exports =  {
 		],
 	},
 	output: {
-		path: path.resolve(__dirname, '../web_tmp/js'),
+		path: path.resolve(__dirname, './src/js/'),
 		filename: 'main.js',
 	},
 };

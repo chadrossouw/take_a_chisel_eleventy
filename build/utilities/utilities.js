@@ -231,9 +231,12 @@ const extractExcerpt = (content) => {
 
   /*Stripping tags*/
   if(content){
-    content = content.replace(/(<([^>]+)>)/gi, "");
+    content = content.replace(/(<([^>]+)>)/gi, ""); 
     content = content.replace(/^(.{300}[^ ]*).*/gis, "$1...");
     content = JSON.stringify(content);
+  }
+  else{
+	  content = JSON.stringify('...');
   }
 	return content;
 }
