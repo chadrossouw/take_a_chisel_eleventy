@@ -68,10 +68,8 @@ const getCacheAndFetchSingleItem = async (cacheFile,id,breakCache=null) => {
 
         try{
             itemsJson = cacheJson.items;
-            if(itemsJson[id]!==undefined){
             itemsJson[id] = await getItem(id);
             await writeCache(cacheFile,itemsJson);
-            }
         }
         catch(e){
             throw e;
