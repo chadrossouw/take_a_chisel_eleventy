@@ -6,3 +6,4 @@ web_tmp
 cache
 .env
 build/.env
+build/tmp/log
