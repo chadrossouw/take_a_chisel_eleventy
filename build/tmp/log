@@ -1326,3 +1326,140 @@ Parsing categories
 > takeachisel@1.0.0 clean
 > rimraf ../web_tmp/
 
+
+> takeachisel@1.0.0 build_live
+> npm-run-all eleventy rename clean
+
+
+> takeachisel@1.0.0 eleventy
+> npx @11ty/eleventy
+
+Getting cache file...
+Cache is valid
+Getting item with id 417
+Fetching item with id 417
+{
+  namespace: 'chisel/v1',
+  routes: {
+    '/chisel/v1': {
+      namespace: 'chisel/v1',
+      methods: [Array],
+      endpoints: [Array],
+      _links: [Object]
+    },
+    '/chisel/v1/get_items': {
+      namespace: 'chisel/v1',
+      methods: [Array],
+      endpoints: [Array],
+      _links: [Object]
+    },
+    '/chisel/v1/get_menu': {
+      namespace: 'chisel/v1',
+      methods: [Array],
+      endpoints: [Array],
+      _links: [Object]
+    }
+  },
+  _links: { up: [ [Object] ] }
+}
+No cache file, fetching everything instead
+Fetching data...
+Got new items
+Attempting to write to cache file
+Getting cache file...
+Cache is valid
+Parsing categories
+[11ty] Writing ../web_tmp/index.html from ./src/index.html (liquid)
+[11ty] Writing ../web_tmp/categories.html from ./src/categories.liquid
+[11ty] Writing ../web_tmp/design/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/publishing/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/history/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/cooking/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/coding/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/publishing/2/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/design/2/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/history/2/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/coding/2/index.html from ./src/category.liquid
+[11ty] Writing ../web_tmp/feed.xml from ./src/feed.liquid
+[11ty] Writing ../web_tmp/home.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/earum-esse-sed-ipsa-qui-facere.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/eos-officiis-nihil-totam-quos-quia.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/facere-quia-architecto-ut-eos-debitis-eum.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/maiores-quod-eaque-exercitationem-voluptatem-aut-soluta-tempora.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/maiores-deleniti-est-repellat-labore-quam-nihil.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/eos-ad-velit-itaque-nihil-ut.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/pariatur-autem-nulla-corrupti.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/eligendi-corporis-aut-consequatur.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/voluptatem-ipsum-earum-modi-quas.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/alias-cum-velit-qui-exercitationem.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/quia-dolorem-tempora-blanditiis-amet.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/et-aut-molestiae-cumque.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/quis-voluptas-delectus-neque-et-possimus-dolores-neque.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/necessitatibus-iure-omnis-quibusdam-minus-et-vitae.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/quidem-fuga-modi-est-dolor-nisi-sed.html from ./src/pages.liquid
+[11ty] Writing ../web_tmp/post/test-with-block.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/ut-recusandae-suscipit-explicabo-cupiditate-vel-quidem.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/382.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/ex-veritatis-quasi-quibusdam-dolorum-consequatur.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/earum-quos-culpa-sit-dignissimos-et.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/atque-enim-alias-quis-adipisci.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/expedita-laudantium-doloribus-eaque.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/nisi-delectus-occaecati-voluptas-itaque.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/provident-sapiente-qui-nam-velit.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/officiis-voluptas-architecto-amet-esse-non-eveniet.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/quam-et-aliquid-voluptate-est.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/consequatur-rerum-unde-qui-aliquid-nobis-natus-tempore.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/nesciunt-nesciunt-commodi-est-voluptatibus.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/soluta-voluptas-sequi-quia-ratione-qui-quia.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/nemo-voluptatibus-libero-omnis-dolores.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/voluptates-commodi-placeat-voluptas.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/qui-pariatur-autem-voluptates-voluptates.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/suscipit-nisi-nam-quibusdam-delectus.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/dolores-quaerat-voluptas-officia-sunt-doloribus.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/officiis-dicta-modi-possimus-deserunt.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/beatae-dolorum-molestiae-nisi-ad-vitae.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/assumenda-ducimus-et-dolorum-aut-temporibus.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/eos-omnis-laudantium-ducimus-enim-vero.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/tenetur-et-corporis-dolor-quaerat-cum-incidunt.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/nemo-consequuntur-officia-quia-minima-a.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/est-accusantium-quisquam-non-qui-officiis.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/quia-dolores-et-est-aliquam-corrupti-laudantium-autem.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/aut-consequatur-et-adipisci-mollitia-quaerat.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/nulla-perferendis-recusandae-incidunt-sequi-nemo-est.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/unde-et-ut-quis-quia-error.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/aspernatur-sunt-sequi-eaque-aliquam.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/aut-omnis-excepturi-libero.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/cumque-mollitia-iure-dolor-possimus-minima.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/dolorem-nihil-earum-ad-exercitationem-cumque-modi.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/rem-sint-veniam-sint-sint-autem.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/in-est-quod-amet-consequatur-incidunt.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/perspiciatis-sunt-optio-ea.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/provident-cum-quae-quisquam.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/temporibus-dolor-nesciunt-odit-eligendi.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/quidem-magni-necessitatibus-perferendis.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/rem-quis-autem-reiciendis-in-quasi-soluta.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/iste-dolor-sed-ut.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/eos-assumenda-possimus-totam-quaerat-rerum.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/ipsam-sed-nam-voluptatem-non-temporibus-nemo.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/delectus-vitae-ratione-nihil.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/post/perferendis-numquam-ratione-aliquam-et.html from ./src/posts.liquid
+[11ty] Writing ../web_tmp/lunr.json from ./src/lunr.liquid
+[11ty] Writing ../web_tmp/posts/index.html from ./src/archive.liquid
+[11ty] Writing ../web_tmp/posts/2/index.html from ./src/archive.liquid
+[11ty] Writing ../web_tmp/posts/3/index.html from ./src/archive.liquid
+[11ty] Writing ../web_tmp/posts/4/index.html from ./src/archive.liquid
+[11ty] Writing ../web_tmp/posts/5/index.html from ./src/archive.liquid
+[11ty] Writing ../web_tmp/search.html from ./src/search.liquid
+[11ty] Copied 29 files / Wrote 81 files in 5.13 seconds (63.3ms each, v2.0.1)
+ Successfully created index
+
+> takeachisel@1.0.0 rename
+> node rename
+
+../web renamed to ../tmp successfully
+../web_tmp renamed to ../web successfully
+../tmp renamed to ../web_tmp successfully
+
+> takeachisel@1.0.0 clean
+> rimraf ../web_tmp/
+

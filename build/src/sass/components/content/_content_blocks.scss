@@ -154,31 +154,12 @@
 	width: 1020px;
 	max-width: calc(100vw - 2 * var(--margin));
 	margin: 0 auto;
-	padding: 4rem 0 4rem;
-	@include media1000 {
-		padding: 4rem 0;
-	}
-	&::before {
-		content: "";
-		position: absolute;
-		top: 3rem;
-		left: 0;
-		width: 3rem;
-		height: 3.4rem;
-		background-image: url(../assets/quotes.png);
-		background-size: contain;
-		background-repeat: no-repeat;
-		@include media1000 {
-			left: -5rem;
-			top: 4rem;
-			width: 4rem;
-		}
-	}
+	padding:1rem 0 1rem 0.5rem;
 	p,
 	footer {
-		font-size: 1.4rem;
+		font-size: 1rem;
 		line-height: 150%;
-		font-weight: 700;
+		font-weight: 400;
 	}
 	p {
 		color: $color_secondary;
