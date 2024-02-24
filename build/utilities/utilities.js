@@ -56,7 +56,7 @@ const getCacheOrFetch = async (cacheFile,type,breakCache=null) =>{
   return itemsJson;
 }
 
-const getCacheAndFetchSingleItem = async (cacheFile,id,breakCache=null) => {
+const getCacheAndFetchSingleItem = async (cacheFile,id,type,breakCache=null) => {
     console.log(`Getting item with id ${id}`);
     let itemsJson = {};
     try {
@@ -65,15 +65,9 @@ const getCacheAndFetchSingleItem = async (cacheFile,id,breakCache=null) => {
         }
         const cacheFileRaw = await fs.readFile(cacheFile);
         const cacheJson = JSON.parse(cacheFileRaw);
-
-        try{
-            itemsJson = cacheJson.items;
-            itemsJson[id] = await getItem(id);
-            await writeCache(cacheFile,itemsJson);
-        }
-        catch(e){
-            throw e;
-        }
+        itemsJson = cacheJson.items;
+        itemsJson[id] = await getItem(id);
+        await writeCache(cacheFile,itemsJson);
     }
     catch{
         console.log('No cache file, fetching everything instead');

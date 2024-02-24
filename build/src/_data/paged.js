@@ -9,7 +9,7 @@ module.exports = async function(){
   let pagesJson;
   if(type=='page'&&id){
     try {
-      pagesJson = await getCacheAndFetchSingleItem(cacheFile,id,breakCache);
+      pagesJson = await getCacheAndFetchSingleItem(cacheFile,id,type,breakCache);
       return sortByDate(pagesJson);
     }
     catch(e){

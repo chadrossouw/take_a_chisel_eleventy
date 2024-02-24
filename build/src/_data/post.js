@@ -10,7 +10,7 @@ module.exports = async function(){
   let categories;
   if(type=='post'&&id){
     try {
-      postsJson = await getCacheAndFetchSingleItem(cacheFile,id,breakCache);
+      postsJson = await getCacheAndFetchSingleItem(cacheFile,id,type,breakCache);
       postsJson = sortByDate(postsJson);
       categories = addCategoryData(postsJson);
       return {posts:postsJson,categories:categories};
