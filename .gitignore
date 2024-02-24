@@ -4,3 +4,5 @@ build/node_modules
 web
 web_tmp
 cache
+.env
+build/.env

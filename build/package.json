@@ -7,7 +7,7 @@
 		"build:webpack": "webpack --mode production",
 		"build:eleventy": "eleventy",
 		"build_all": "npm-run-all webpacker eleventy rename clean",
-		"build_live": "npm-run-all copy_assets webpacker eleventy rename clean",
+		"build_live": "npm-run-all eleventy rename clean",
 		"clean": "rimraf ../web_tmp/",
 		"concat": "node concat",
 		"convert": "node convert.mjs",
