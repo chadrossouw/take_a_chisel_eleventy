@@ -815,6 +815,7 @@ input.button.decorative.reset {
 }
 
 #content {
+		width: calc(100vw - 2 * var(--margin));
 	img,.container{
 		margin-bottom:2rem;
 	}
