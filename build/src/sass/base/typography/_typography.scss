@@ -103,9 +103,10 @@ kbd,
 tt,
 var {
   font-family: $font__code;
+  color:$color-white;
 }
 
-abbr,
+abbr, 
 acronym {
   border-bottom: 1px dotted $color__border-abbr;
   cursor: help;

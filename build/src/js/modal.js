@@ -2,12 +2,12 @@ const modalHandlers = () => {
     class Modal {
         constructor(el) {
         this.el = el;
-        console.log(this.el);
         this.el.active = false;
         this.modal = document.getElementById(this.el.dataset.modal_id);
+        this.modal.style.display = "none";
         this.close = this.modal.querySelector(".close");
-        [this.firstFocusable, this.lastFocusable] =
-            this.getFirstAndLastFocusable();
+        this.setFirstLastFocusable();
+        this.firstFocusable.focus();
         this.el.addEventListener("click", (e) => this.openModal(e));
         this.close.addEventListener("click", (e) => this.closeModal(e));
         }
@@ -40,6 +40,7 @@ const modalHandlers = () => {
             document.documentElement.classList.add("scrolly_lock");
             this.firstFocusable.focus();
             this.modal.addEventListener("keydown", this);
+            window.addEventListener('search_results_returned', this.setFirstLastFocusable.bind(this));
             const event = new CustomEvent("modal_opened", {
                 detail: {
                 modal: this.modal,
@@ -65,6 +66,14 @@ const modalHandlers = () => {
                 "transitionend",
                 this
             );
+            const event = new CustomEvent("modal_closed", {
+                detail: {
+                modal: this.modal,
+                trigger: e.currentTarget,
+                thisModal: this,
+                },
+            });
+            window.dispatchEvent(event);
             this.modal.removeEventListener("keydown", this);
         }
 
@@ -74,6 +83,13 @@ const modalHandlers = () => {
                 this.modal.removeEventListener("transitionend", this);
             }
         }
+
+        setFirstLastFocusable(e=false){
+            console.log(e);
+            [this.firstFocusable, this.lastFocusable] =
+            this.getFirstAndLastFocusable();
+        }
+
         getFirstAndLastFocusable() {
             let focusable = [];
             let allDescendants = this.modal.querySelectorAll("*");

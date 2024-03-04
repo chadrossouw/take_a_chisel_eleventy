@@ -34,6 +34,7 @@ const navigation = () => {
 			this.lastFocusable = this.getLastFocusable();
 			this.button.addEventListener("click", this.toggleMenu.bind(this));
 			this.menuIsOpen = false;
+			this.menu.style.visibility = "hidden";
 			this.transitionEndIsAdded = false;
 			this.prefersReduced =  window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||window.matchMedia("(prefers-reduced-motion: reduce)").matches ==true;
 		}
@@ -47,6 +48,7 @@ const navigation = () => {
 		}
 
 		openMenu(){
+			window.scrollTo(0,0);
 			this.menuIsOpen = true;
 			this.menu.style.visibility = "visible";
 			this.menu.classList.add("toggled");
@@ -56,6 +58,8 @@ const navigation = () => {
 			document.documentElement.classList.add("scroll-lock");
 			this.menu.addEventListener("focusout", this.focusHandler.bind(this));
 			this.menu.addEventListener("keydown", this.escHandler.bind(this));
+			window.addEventListener("modal_opened", this.handleSubModalOpened.bind(this));
+			window.addEventListener("modal_closed", this.handleSubModalClosed.bind(this));
 		}
 
 		closeMenu(){
@@ -67,6 +71,8 @@ const navigation = () => {
 			document.documentElement.classList.remove("scroll-lock");
 			this.menu.removeEventListener("focusout", this.focusHandler.bind(this));
 			this.menu.removeEventListener("keydown", this.escHandler.bind(this));
+			window.removeEventListener("modal_opened", this.handleSubModalOpened.bind(this));
+			window.removeEventListener("modal_closed", this.handleSubModalClosed.bind(this));
 			if(this.prefersReduced){
 				this.hideVisibilityOnEnd();
 				return;
@@ -75,6 +81,19 @@ const navigation = () => {
 				this.menu.addEventListener("transitionend", this.hideVisibilityOnEnd.bind(this));
 			}
 
+		}
+
+		handleSubModalOpened(e){
+			console.log(e);
+			this.menu.removeEventListener("focusout", this.focusHandler.bind(this));
+			this.menu.removeEventListener("keydown", this.escHandler.bind(this));
+			e.detail.thisModal.firstFocusable.focus();
+		}
+		
+		handleSubModalClosed(e){
+			this.firstFocusable.focus();
+			this.menu.addEventListener("focusout", this.focusHandler.bind(this));
+			this.menu.addEventListener("keydown", this.escHandler.bind(this));
 		}
 		
 		hideVisibilityOnEnd(){

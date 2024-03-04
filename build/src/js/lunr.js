@@ -22,17 +22,25 @@ const lunrInit = (idx,reference) => {
         searchTerm.textContent = 'Searching...';
         const results = idx.search(searchInput.value);
         searchResults.innerHTML = '';
-        for(let i = 0; i < 5; i++){
-            const item = buildSearchResults(reference[results[i].ref]);
-            searchResults.appendChild(item);
+        if(results.length == 0){
+            searchResults.innerHTML = '<li>No results found</li>';
         }
-        if(results.length > 5){
-            const more = document.createElement('a');
-            more.textContent = 'More results...';
-            more.href = `/search.html?q=${searchInput.value}`;
-            searchResults.appendChild(more);
+        else{
+            
+            for(let i = 0; i < 5; i++){
+                const item = buildSearchResults(reference[results[i].ref]);
+                searchResults.appendChild(item);
+            }
+            if(results.length > 5){
+                const more = document.createElement('a');
+                more.textContent = 'More results...';
+                more.href = `/search.html?q=${searchInput.value}`;
+                searchResults.appendChild(more);
+            }
+            const event = new CustomEvent("search_results_returned");
+            window.dispatchEvent(event);
         }
-        searchTerm.textContent = searchInput.value;
+        searchTerm.textContent = `Search results for: ${searchInput.value}`;
     }, 500));
 }
 
@@ -45,25 +53,38 @@ const lunrPageSearch = (idx,reference) => {
     searchInput.value = term;
     const results = idx.search(term);
     searchResults.innerHTML = '';
-    results.forEach((result) => {
-        const item = buildSearchResults(reference[result.ref]);
-        searchResults.appendChild(item);
-    });
+    if(results.length == 0){
+        searchResults.innerHTML = '<li>No results found</li>';
+    }
+    else{
+        results.forEach((result) => {
+            const item = buildSearchResults(reference[result.ref]);
+            searchResults.appendChild(item);
+        });
+    }
     searchInput.addEventListener('input', debounce(() => {
         searchTerm.textContent = 'Searching...';
         const results = idx.search(searchInput.value);
         searchResults.innerHTML = '';
-        for(let i = 0; i < 6; i++){
-            const item = buildSearchResults(reference[results[i].ref]);
-            searchResults.appendChild(item);
+        if(results.length == 0){
+            searchResults.innerHTML = '<li>No results found</li>';
         }
-        if(results.length > 6){
-            const more = document.createElement('a');
-            more.textContent = 'More results...';
-            more.href = `/search.html?q=${searchInput.value}`;
-            searchResults.appendChild(more);
+        else{
+            
+            for(let i = 0; i < 6; i++){
+                const item = buildSearchResults(reference[results[i].ref]);
+                searchResults.appendChild(item);
+            }
+            if(results.length > 6){
+                const more = document.createElement('a');
+                more.textContent = 'More results...';
+                more.href = `/search.html?q=${searchInput.value}`;
+                searchResults.appendChild(more);
+            }
+            const event = new CustomEvent("search_results_returned");
+            window.dispatchEvent(event);
         }
-        searchTerm.textContent = searchInput.value;
+        searchTerm.textContent = `Search results for: ${searchInput.value}`
     }, 500));
 }
 

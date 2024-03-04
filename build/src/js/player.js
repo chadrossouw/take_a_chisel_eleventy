@@ -42,7 +42,7 @@ class playerYTClass {
                 playText.innerHTML = `Play ${title}`;
             }
         }
-        this.playerContainer.classList.add('ready');
+        this.playerContainer.classList.add('ready'); 
         this.playerContainer.addEventListener('click',this.playVideo.bind(this))
     }
     
