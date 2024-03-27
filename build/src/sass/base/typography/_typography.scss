@@ -105,7 +105,9 @@ var {
   font-family: $font__code;
   color:$color-white;
 }
-
+p code{
+  color:$color_secondary;
+}
 abbr, 
 acronym {
   border-bottom: 1px dotted $color__border-abbr;
