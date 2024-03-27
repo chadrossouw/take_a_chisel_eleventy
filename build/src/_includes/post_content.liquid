@@ -1,7 +1,8 @@
 <div id="content" class="margins">
   {% if data.image %}
     <div class="container container--sixteennine">
-      {% include 'image' data: data.image %}
+      {% include 'image' data: data.image
+        , alt: data.alt %}
     </div>
   {% endif %}
   <h1>{{ data.title }}</h1>

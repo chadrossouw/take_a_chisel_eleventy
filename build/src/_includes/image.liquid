@@ -1,5 +1,11 @@
 {% if data %}
-  <img src="{{data}}" alt="">
+  <img
+    src="{{data}}"
+    alt="{{alt}}"
+    loading="lazy">
 {% else %}
-  <img src="{{environment.url}}assets/images/{{global.image.thumb}}" class="default">
+  <img
+    src="{{environment.url}}assets/images/{{global.image.thumb}}"
+    class="default"
+    loading="lazy">
 {% endif %}
